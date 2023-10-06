@@ -99,17 +99,30 @@
 
     div[3].style.width = "300px"
     div[3].style.height = "70px"
+    div[3].style.display = "flex"
+    div[3].style.justifyContent = "center"
+    div[3].style.alignItems = "center"
     div[3].style.position = "relative"
     div[3].style.marginTop = "20px"
     div[3].style.marginLeft = "20px"
     div[3].style.backgroundColor = "#d9d9d9"
+    
+
+    let h3 = document.getElementsByTagName("h3")
+    div[3].appendChild(document.createElement("h3"))
+    h3[0].textContent = "제한시간: 10초"
 
     div[4].style.width = "300px"
     div[4].style.height = "70px"
     div[4].style.position = "relative"
+    div[4].style.display = "flex"
+    div[4].style.justifyContent = "center"
+    div[4].style.alignItems = "center"
     div[4].style.marginTop = "20px"
     div[4].style.marginLeft = "20px"
     div[4].style.backgroundColor = "#d9d9d9"
+    div[4].appendChild(document.createElement("h3"))
+    h3[1].textContent = "점수:"
 
     div[5].style.width = "300px"
     div[5].style.height = "300px"
