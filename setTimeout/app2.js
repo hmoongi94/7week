@@ -9,4 +9,3 @@
   setTimeout(function(){
     console.log("세번째 밍구")
   },1000)
-
