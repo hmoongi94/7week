@@ -28,14 +28,19 @@
   <script>
     div = document.getElementsByTagName("div")
     console.dir(div)
+    p = document.getElementsByTagName("p")
+    console.dir(p)
 
     // root
+    root = document.getElementById("root")
     div[0].style.display = "flex"
 
     // aimlab
     div[1].style.width = "800px"
     div[1].style.height = "800px"
     div[1].style.backgroundColor = "#d9d9d9"
+    div[1].style.display = "flex"
+    div[1].style.flexWrap = "wrap"
 
     let makePTag 
     let div1_makePTag
@@ -44,20 +49,42 @@
     target = function(){
       makePTag = document.createElement("p")
       div1_makePTag = div[1].appendChild(makePTag)
-      p = document.getElementsByTagName("p")
-      for(i=0; i<p.length; i++){
+    }
+
+    target()
+    target()
+    target()
+
+    let i
+    for(i=0; i<p.length; i++){
         p[i].style.width = "100px"
         p[i].style.height = "100px"
         p[i].style.borderRadius = "90px"
         p[i].style.backgroundColor = "black"
-        p[i].addEventListener("click",function(){
-          if(event.target === p[i]){
-          p[i].remove()}
-        })
+        p[i].style.position = "relative"
       }
-    }
 
-    target()
+    div[1].addEventListener("click",function(){
+        for(i=0; i<p.length; i++){
+          if(event.target === p[i]){
+          p[i].remove()
+          }
+        }
+      })
+   
+
+    // let removeTarget
+    // removeTarget = function(){
+    //   for(i=0; i<p.length; i++){
+    //     p[i].addEventListener("click",function(){
+    //       console.dir(event)
+    //       if(event.target === p[i]){
+    //       p[i].remove()}
+    //     })
+    //   }
+    // }
+
+    // removeTarget()
     // p[0].remove()
     
 
