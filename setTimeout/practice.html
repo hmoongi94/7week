@@ -22,10 +22,10 @@
   <script>
     const sosa = document.getElementById("sosa")
     console.log(sosa);
-    sosa.style.width = "10vw"
-    sosa.style.height = "10vw"
+    sosa.style.width = "100px"
+    sosa.style.height = "100px"
     sosa.style.backgroundColor = "black"
-    sosa.style.position = "relative"
+    sosa.style.position = "absolute"
     
     
     console.dir(sosa)
@@ -38,17 +38,19 @@
     //   mingoo++
     // },30)
 
-    let mingoo = 10
+    let mingoo = 0
+    let moongi = 0
     sosa.addEventListener("click",function(){
       setInterval(function(){
         sosa.style.top = mingoo + "px"
         sosa.style.left = mingoo + "px"
-        mingoo++
-      },30)
-      if(sosa.style.top > "300px" ){
-          sosa.style.backgroundColor = "red"
-          sosa.style.borderRadius = "90px"
-          }
+        if(sosa.style.top === 100+"px" ){
+            sosa.style.backgroundColor = "red"
+            sosa.style.borderRadius = "90px"
+            clearInterval
+            }
+            mingoo++, moongi++
+          },30)
     })
 
 
