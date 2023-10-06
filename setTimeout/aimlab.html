@@ -49,20 +49,19 @@
     target = function(){
       makePTag = document.createElement("p")
       div1_makePTag = div[1].appendChild(makePTag)
+      
+      for(i=0; i<p.length; i++){
+          p[i].style.width = "100px"
+          p[i].style.height = "100px"
+          p[i].style.borderRadius = "90px"
+          p[i].style.backgroundColor = "black"
+          p[i].style.position = "relative"
+        }
     }
 
     target()
-    target()
-    target()
+    
 
-    let i
-    for(i=0; i<p.length; i++){
-        p[i].style.width = "100px"
-        p[i].style.height = "100px"
-        p[i].style.borderRadius = "90px"
-        p[i].style.backgroundColor = "black"
-        p[i].style.position = "relative"
-      }
 
     div[1].addEventListener("click",function(){
         for(i=0; i<p.length; i++){
@@ -72,6 +71,9 @@
         }
       })
    
+      setInterval(function(){
+        target();
+      },1000)
 
     // let removeTarget
     // removeTarget = function(){
