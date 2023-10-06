@@ -44,8 +44,13 @@
         sosa.style.top = mingoo + "px"
         sosa.style.left = mingoo + "px"
         mingoo++
-      },100)
-    })
+        if(sosa.style.top > 500 + "px"){
+            sosa.style.backgroundColor = "red"
+            sosa.style.borderRadius = "90px"
+            }
+      },10)
+      })
+
 
   </script>
 </body>
