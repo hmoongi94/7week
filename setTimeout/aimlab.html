@@ -58,8 +58,6 @@
           p[i].style.position = "relative"
         }
     }
-
-    target()
     
 
 
@@ -71,9 +69,9 @@
         }
       })
    
-      setInterval(function(){
-        target();
-      },1000)
+      // let play = setInterval(function(){
+      //   target();
+      // },1000)
 
     // let removeTarget
     // removeTarget = function(){
@@ -115,10 +113,19 @@
 
     div[5].style.width = "300px"
     div[5].style.height = "300px"
+    div[5].style.display = "flex"
+    div[5].style.justifyContent = "center"
+    div[5].style.alignItems = "center"
     div[5].style.position = "relative"
     div[5].style.marginTop = "20px"
     div[5].style.marginLeft = "20px"
     div[5].style.backgroundColor = "#d9d9d9"
+    div[5].appendChild(document.createElement("button"))
+    let button = document.getElementsByTagName("button")
+    button[0].style.width = "100px"
+    button[0].style.height = "100px"
+    button[0].style.backgroundColor = "pink"
+    button[0].textContent = "Play!"
 
   </script>
 </body>
