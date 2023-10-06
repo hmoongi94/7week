@@ -23,8 +23,30 @@
     const sosa = document.getElementById("sosa")
     console.log(sosa);
     sosa.style.width = "10vw"
-    sosa.style.height = "10vh"
+    sosa.style.height = "10vw"
     sosa.style.backgroundColor = "black"
+    sosa.style.position = "absolute"
+    
+    
+    console.dir(sosa)
+    
+
+    // let mingoo = 0;
+    // setInterval(function(){
+    //   sosa.style.top = mingoo + "px"
+    //   sosa.style.left = mingoo + "px"    
+    //   mingoo++
+    // },30)
+
+    let mingoo = 10
+    sosa.addEventListener("click",function(){
+      setInterval(function(){
+        sosa.style.top = mingoo + "px"
+        sosa.style.left = mingoo + "px"
+        mingoo++
+      },100)
+    })
+
   </script>
 </body>
 </html>
