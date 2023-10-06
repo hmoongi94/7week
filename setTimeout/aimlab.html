@@ -50,8 +50,18 @@
         p[i].style.height = "100px"
         p[i].style.borderRadius = "90px"
         p[i].style.backgroundColor = "black"
+        p[i].addEventListener("click",function(){
+          if(event.target === p[i]){
+          p[i].remove()}
+        })
       }
     }
+
+    target()
+    // p[0].remove()
+    
+
+    
 
 
     // 오른쪽 점수판 및 시작버튼
