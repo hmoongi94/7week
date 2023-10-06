@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *margin{margin:0; padding:0; box-sizing:border-box;}
+    #root {
+      width:100vw;
+      height:100vh;
+      background-color: bisque;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="sosa"></div>
+  </div>
+
+  <script>
+    const sosa = document.getElementById("sosa")
+    console.log(sosa);
+    sosa.style.width = "100px"
+    sosa.style.height = "100px"
+    sosa.style.backgroundColor = "black"
+    sosa.style.position = "absolute"
+    
+    
+    console.dir(sosa)
+
+    // 타이머
+    let timer
+    // '시작' 버튼을 누르면 실행된다.
+    function startClock(){
+      // 1초마다 실행될 함수 (현재 시간을 출력한다.)
+      function clock(){
+        sosa.style.backgroundColor = "red"
+      }
+
+      // 1초마다 clock() 함수를 실행시킨다.
+      timer = setInterval(clock, 1000)
+    }
+
+    // '종료' 버튼을 누르면 실행된다.
+    function stopClock(){
+      // timer의 반복실행을 종료한다.
+      clearInterval(timer);
+    }
+    
+
+
+  </script>
+</body>
+</html>
