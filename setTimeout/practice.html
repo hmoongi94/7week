@@ -25,7 +25,7 @@
     sosa.style.width = "10vw"
     sosa.style.height = "10vw"
     sosa.style.backgroundColor = "black"
-    sosa.style.position = "absolute"
+    sosa.style.position = "relative"
     
     
     console.dir(sosa)
@@ -44,12 +44,12 @@
         sosa.style.top = mingoo + "px"
         sosa.style.left = mingoo + "px"
         mingoo++
-        if(sosa.style.top > 500 + "px"){
-            sosa.style.backgroundColor = "red"
-            sosa.style.borderRadius = "90px"
-            }
-      },10)
-      })
+      },30)
+      if(sosa.style.top > "300px" ){
+          sosa.style.backgroundColor = "red"
+          sosa.style.borderRadius = "90px"
+          }
+    })
 
 
   </script>
