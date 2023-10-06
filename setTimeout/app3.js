@@ -6,3 +6,8 @@ function sosa() {
 };
 
 sosa()
+
+setInterval(function(){},1000);
+setInterval(function(){
+  console.log("ㅂ2")
+},1000)
