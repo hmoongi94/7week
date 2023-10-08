@@ -153,13 +153,15 @@
     button[0].textContent = "Play!"
 
     let play
+    let rePlay
+    let timer
     button[0].addEventListener("click",function(){
       if(button[0].textContent==="Play!"){
         button[0].textContent = "Stop!"
         play = setInterval(function(){
         target();
         // 10초 이후에 꺼지기
-        setTimeout(function(){
+        timer = setTimeout(function(){
           clearInterval(play)
           button[0].textContent = "Play!"
         },10000)
@@ -169,6 +171,7 @@
         // 버튼 누르면 꺼지기
         button[0].textContent = "Play!"
         clearInterval(play)
+        clearInterval(timer)
       }
     })
 
