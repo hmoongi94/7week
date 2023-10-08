@@ -56,6 +56,13 @@
           p[i].style.borderRadius = "90px"
           p[i].style.backgroundColor = "black"
           p[i].style.position = "relative"
+          // 랜덤함수로 좌료찍기
+            let x = Math.floor(Math.random() * event.pageX + 245);
+            let y = Math.floor(Math.random() * event.pageY + 117);
+            let xString = x.toString();
+            let yString = y.toString();
+          p[i].style.top = xString + "px"
+          p[i].style.left = ystring + "px"
         }
     }
     
