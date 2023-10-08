@@ -54,7 +54,7 @@
       makePTag = document.createElement("p")
       div1_makePTag = div[1].appendChild(makePTag)
       
-      for(i=0; i<p.length; i++){
+      for(i=p.length-1; i<p.length; i++){
           p[i].style.width = "100px"
           p[i].style.height = "100px"
           p[i].style.borderRadius = "90px"
@@ -161,6 +161,7 @@
         // 10초 이후에 꺼지기
         setTimeout(function(){
           clearInterval(play)
+          button[0].textContent = "Play!"
         },10000)
         },500)
       }
