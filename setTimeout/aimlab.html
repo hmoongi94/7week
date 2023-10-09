@@ -27,9 +27,9 @@
 
   <script>
     div = document.getElementsByTagName("div")
-    console.dir(div)
+    // console.dir(div)
     p = document.getElementsByTagName("p")
-    console.dir(p)
+    // console.dir(p)
 
     // root
     root = document.getElementById("root")
@@ -45,8 +45,8 @@
     let makePTag 
     let div1_makePTag
     let target 
-    console.dir(div[1])
-    console.log(div[1].getBoundingClientRect())
+    // console.dir(div[1])
+    // console.log(div[1].getBoundingClientRect())
     // 100~800
     console.log(Math.floor(Math.random() * (800-100) + 100))
 
@@ -71,8 +71,9 @@
         }
     }
     
+    // console.dir(div[3])
     let score = 0 
-    console.dir(div[3])
+
     div[1].addEventListener("click",function(){
       for(i=0; i<p.length; i++){
         if(event.target === p[i]){
@@ -203,15 +204,21 @@
       else if(button[0].textContent === "Stop!"){
         // 버튼 누르면 꺼지기
         button[0].textContent = "Play!"
+        clearInterval(play)
+        clearInterval(timer)
+        // 제한시간
+        time = 120000;
+        min = 2;
+        sec = 60;
         h3[0].textContent = "제한시간: " + min + ":00"
+        clearInterval(playTime)
+        // 점수
         h3[1].textContent = "점수:"
         score = 0
+        // 타겟 초기화
         for(i=0; i<p.length; i++){
           p[i].remove()
         }
-        clearInterval(play)
-        clearInterval(timer)
-        clearInterval(playTime)
       }
     })
 
