@@ -185,28 +185,33 @@
         button[0].textContent = "Stop!"
 
         play = setInterval(function(){
-        target();
-        timeCount();
-        setTimeout(function(){
-          clearInterval(playTime)
-        },120000)        
-
+        target();    
         // 10초 이후에 꺼지기
         timer = setTimeout(function(){
           clearInterval(play)
           button[0].textContent = "Play!"
         },120000)
         },1000)
-      }
+
+      // 제한시간 2분
+      timeCount();
+        setTimeout(function(){
+          clearInterval(playTime)
+        },120000)  
+      } 
+
       else if(button[0].textContent === "Stop!"){
         // 버튼 누르면 꺼지기
         button[0].textContent = "Play!"
         h3[0].textContent = "제한시간: " + min + ":00"
         h3[1].textContent = "점수:"
         score = 0
+        for(i=0; i<p.length; i++){
+          p[i].remove()
+        }
         clearInterval(play)
         clearInterval(timer)
-        clearInterval(palyTime)
+        clearInterval(playTime)
       }
     })
 
