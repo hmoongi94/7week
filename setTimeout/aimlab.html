@@ -213,9 +213,9 @@
       else if(button[0].textContent === "Stop!"){
         // 버튼 누르면 꺼지기
         button[0].textContent = "Play!"
+        // 제한시간
         clearInterval(play)
         clearInterval(timer)
-        // 제한시간
         time = 120000;
         min = 2;
         sec = 60;
@@ -226,9 +226,19 @@
         score = 0
         // 타겟 초기화
         
-        for(i=0; i<p.length; i++){
-          p[i].remove()
-        }
+        // for(i=0; i<p.length; i++){
+        //   p[i].remove()
+        // }
+
+        // div[1].removeChild(p)
+
+        // p array를 복사해서 사용
+        const pCopy = p.slice();
+        pCopy.forEach((element) => {
+          // DOM에서 제거
+          element.parentNode.removeChild(element);
+        });
+
       }
     })
 
