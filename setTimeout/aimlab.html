@@ -79,7 +79,7 @@
         if(event.target === p[i]){
           score = score +1
             div[4].children[0].textContent = "점수:" +score  
-          p[i].remove()
+            p[i].remove()
           }
         }
       })
@@ -186,7 +186,10 @@
         button[0].textContent = "Stop!"
 
         play = setInterval(function(){
-        target();    
+        target();  
+        setTimeout(function(){
+          target();
+        },500)  
         // 10초 이후에 꺼지기
         timer = setTimeout(function(){
           clearInterval(play)
@@ -216,6 +219,7 @@
         h3[1].textContent = "점수:"
         score = 0
         // 타겟 초기화
+        
         for(i=0; i<p.length; i++){
           p[i].remove()
         }
