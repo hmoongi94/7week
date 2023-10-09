@@ -226,21 +226,24 @@
         score = 0
         // 타겟 초기화
         
+        // // remove()
         // for(i=0; i<p.length; i++){
         //   p[i].remove()
         // }
 
-        // div[1].removeChild(p)
+        // // removeChild()        
+        p.parentNode.removeChild(p)
 
         // p array를 복사해서 사용
-        const pCopy = p.slice();
-        pCopy.forEach((element) => {
-          // DOM에서 제거
-          element.parentNode.removeChild(element);
-        });
-
+        // pCopy.forEach((element) => {
+        //   // DOM에서 제거
+        //   element.parentNode.removeChild(element);
+        // });
+        
       }
     })
+    
+   
 
   </script>
 </body>
