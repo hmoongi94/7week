@@ -124,7 +124,8 @@
 
     let h3 = document.getElementsByTagName("h3")
     div[3].appendChild(document.createElement("h3"))
-    // h3[0].textContent = "제한시간: 10초"
+    
+    // h3[0].textContent = "제한시간: 120초"
     let time = 120000;
     let min = 2;
     let sec = 60;
@@ -194,14 +195,18 @@
         timer = setTimeout(function(){
           clearInterval(play)
           button[0].textContent = "Play!"
-        },10000)
-        },500)
+        },120000)
+        },1000)
       }
       else if(button[0].textContent === "Stop!"){
         // 버튼 누르면 꺼지기
         button[0].textContent = "Play!"
+        h3[0].textContent = "제한시간: " + min + ":00"
+        h3[1].textContent = "점수:"
+        score = 0
         clearInterval(play)
         clearInterval(timer)
+        clearInterval(palyTime)
       }
     })
 
