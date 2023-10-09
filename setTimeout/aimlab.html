@@ -124,7 +124,29 @@
 
     let h3 = document.getElementsByTagName("h3")
     div[3].appendChild(document.createElement("h3"))
-    h3[0].textContent = "제한시간: 10초"
+    // h3[0].textContent = "제한시간: 10초"
+    let time = 120000;
+    let min = 2;
+    let sec = 60;
+    
+    h3[0].textContent = "제한시간: " + min + ":00"
+
+    function timeCount(){
+      playTime =  setInterval(function(){
+        time = time - 1000;
+        min = time/(60*1000);
+
+      if(sec>0){
+        sec= sec-1;
+        h3[0].textContent = Math.floor(min)+ ":" + sec;
+      }
+      if(sec===0){
+        sec=60;
+        h3[0].textContent=Math.floor(min)+ ":" + "00"
+      }
+      },1000)
+    }
+
 
     div[4].style.width = "300px"
     div[4].style.height = "70px"
