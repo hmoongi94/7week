@@ -1,29 +1,25 @@
-const pokemon = require('pokemon')
 // console.log(pokemon.all('ko'))
 
 // // write로 html 파일 만들고 포케몬 이름 리스트로 제작해보기
 
 // const fs = require('fs');
 // fs.writeFile("class/Scss/pokemonList.html", pokemon, err =>{
-//   if(err){
-//     console.error(err);
-//   }
-//   // file written successfully
-// })
-
+  //   if(err){
+    //     console.error(err);
+    //   }
+    //   // file written successfully
+    // })
+    
+const pokemon = require('pokemon')
 
 var fs = require('fs')
-let pokemonList = []
-// console.log(pokemon.all('ko').length)
-// console.log(pokemon.all('ko')[1])
-
+let pokemonLi = []
 for(i=0; i<pokemon.all('ko').length; i++){
-pokemonList[i] = pokemon.all('ko')[i]
+  pokemonLi[i] = `<li>${pokemon.all('ko')[i]}</li>`
 }
+console.log(pokemonLi)
 
-
-fs.writeFile("pokemonList.html",
-`<!DOCTYPE html>
+let content = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -32,30 +28,12 @@ fs.writeFile("pokemonList.html",
   <title>Document</title>
 </head>
 <body>
- <div id="root">
- <ul></ul>
- </div>
- 
- <script>
- let pokemonList
-
- for(i=0; i<${pokemon.all('ko').length}; i++){
-  pokemonList[i] = ${pokemon.all('ko')}[i]
-  }
-
- ul = document.getElementsByTagName("ul")
- for(i=0; i<${pokemon.all('ko').length}; i++){
- ul.appendChild(li)
- }
-
- li = document.getElementsByTagName("li")
- for(i=0; i<${pokemon.all('ko').length}; i++){
-  li[i].textContent = pokemonList[i]
- }
- </script>
+  ${pokemonLi}
 </body>
-</html>`, 
-function(err){
+</html>`
+
+
+fs.writeFile("pokemonList.html", content, function(err){
   if(err) throw err;
-  console.log('saved')
+  console.log("saved!")
 })
