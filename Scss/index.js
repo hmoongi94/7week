@@ -37,16 +37,20 @@ fs.writeFile("pokemonList.html",
  </div>
  
  <script>
- const pokemon = require('pokemon')
+ let pokemonList
+
+ for(i=0; i<${pokemon.all('ko').length}; i++){
+  pokemonList[i] = ${pokemon.all('ko')}[i]
+  }
 
  ul = document.getElementsByTagName("ul")
- for(i=0; i<pokemon.all('ko').length; i++){
+ for(i=0; i<${pokemon.all('ko').length}; i++){
  ul.appendChild(li)
  }
 
  li = document.getElementsByTagName("li")
- for(i=0; i<pokemon.all('ko').length; i++){
-  li[i].textContent = ${pokemon.all('ko')[i]}
+ for(i=0; i<${pokemon.all('ko').length}; i++){
+  li[i].textContent = pokemonList[i]
  }
  </script>
 </body>
