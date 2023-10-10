@@ -1,7 +1,9 @@
+$hundred: 100vw;
+
 #root{
-  width:100vw;
+  width: $hundred;
   height:100vh;
-  ul{
+  & > ul{
     margin:0;
     padding:0;
     li{
