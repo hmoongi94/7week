@@ -8,3 +8,5 @@
 #root {
   @include flex-center(center, center ,column);
 }
+
+// package.json scripts 부분에 지정 후 npm run 하면 css로 변환된다.
