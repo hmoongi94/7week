@@ -16,3 +16,5 @@ server.listen(3500,(err)=>{
     // 꿀팁) 로그에 주소적으면 콘솔에서 클릭해서 서버들어갈 수 있음.
   }
 })
+
+console.log("test")
