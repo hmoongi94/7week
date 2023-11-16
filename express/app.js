@@ -5,7 +5,7 @@ const port = 3000;
 app.use(express.static('public'));
 
 // 이 부분이 중요: POST 요청 데이터를 파싱하기 위해 express.json() 미들웨어를 사용합니다.
-app.use(express.json());
+// app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
